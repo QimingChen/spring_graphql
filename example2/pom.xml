@@ -50,11 +50,6 @@
 		</dependency>
 		<dependency>
 			<groupId>com.graphql-java</groupId>
-			<artifactId>graphql-java-spring-boot-starter-webmvc</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-spring-boot-starter</artifactId>
 			<version>5.0.2</version>
 		</dependency>
@@ -67,7 +62,7 @@
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphiql-spring-boot-starter</artifactId>
 			<version>5.0.2</version>
-		</dependency>
+		</dependency>i
 
 	</dependencies>
 

@@ -1,24 +1,15 @@
 package com.example.graphql.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class CreatePokemonInput {
 
-@Entity
-@Table(name = "pokemon")
-public class Pokemon {
-
-  @Id
   public Integer id;
 
-  @Column
   public String name;
 
-  public Pokemon() {
+  public CreatePokemonInput() {
   }
 
-  public Pokemon(Integer id, String name) {
+  public CreatePokemonInput(Integer id, String name) {
     this.id = id;
     this.name = name;
   }

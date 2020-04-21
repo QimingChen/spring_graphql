@@ -21,7 +21,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @GraphQLTest
-public class GraphqlApplicationTests {
+public class PokemonQueryResolverTest {
 
 	@Autowired
 	private GraphQLTestTemplate graphQLTestTemplate;
@@ -30,13 +30,15 @@ public class GraphqlApplicationTests {
 	private PokemonRepository pokemonRepository;
 
 	@Test
-	public void getById() throws IOException {
-		Pokemon pokemon = new Pokemon(1L, "Pikachu");
+	public void getPokemonById_Success() throws IOException {
+		Pokemon pokemon = new Pokemon(1, "Pikachu");
 		when(pokemonRepository.findById(any()))
 				.thenReturn(Optional.of(pokemon));
 
 		GraphQLResponse response =
 				graphQLTestTemplate.postForResource("get-pokemon-by-id.graphql");
+
+		System.out.println(response.getRawResponse().toString());
 
 		assertTrue(response.isOk());
 		assertEquals("1", response.get("$.data.pokemon.id"));

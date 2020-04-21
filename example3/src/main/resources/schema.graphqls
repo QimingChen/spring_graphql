@@ -6,3 +6,12 @@ type Pokemon {
 type Query {
     pokemon(id: ID!): Pokemon
 }
+
+type Mutation {
+    createPokemon(input: CreatePokemonInput!): Pokemon
+}
+
+input CreatePokemonInput {
+    id: Int!
+    name: String!
+}
